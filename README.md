@@ -22,6 +22,10 @@ The included GitHub Actions workflow builds and deploys the static site whenever
 
 GitHub Pages is a static host and cannot run the Bare proxy server. Pages deployments can show the site and its catalog, but launching proxied games, apps, and the emulator requires a deployment that runs the Node server.
 
+## Deploy the full app to Render
+
+To enable the proxy and game/app launches, create a Blueprint in Render from this repository. Render will use `render.yaml` and the Dockerfile to deploy the Node server, which serves the site and handles Bare HTTP and WebSocket requests. Use the Render service URL for the full app; the GitHub Pages URL remains static-only.
+
 ## Run locally
 
 You need [NodeJS](https://nodejs.org) and [Git](https://git-scm.com/download) installed on your system.

@@ -1,12 +1,13 @@
 FROM node:20.5.1-bullseye-slim
 ENV NODE_ENV=production
 
-WORKDIR /public
+WORKDIR /app
 
-COPY ["package.json", "./"]
+COPY package.json package-lock.json ./
 
-RUN npm install
+RUN npm ci --omit=dev
 
-COPY . .
+COPY index.js ./
+COPY public ./public
 
-CMD [ "node", "index.js" ]
+CMD ["npm", "start"]

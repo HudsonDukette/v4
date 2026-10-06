@@ -3,3 +3,6 @@ services:
     name: art
     env: docker
     plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /
